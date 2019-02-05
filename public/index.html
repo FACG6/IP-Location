@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Found Your IP</title>
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form" id="form">
+            <form >
+                <div class="infoholder">
+                    <label>
+                        <input type="text" id="search" class="search" placeholder="Inset Your IP">
+                    </label>
+                    <input aria-label="button" type="submit" value="search" name="search" id="button" class="button">
+                    <div class="result">
+                        <ul>
+                            <p>City : <span id="City"></span></p>
+                            <p>region : <span id="region"></span></p>
+                            <p>country calling -ch :<span id="ccc"></span></p>
+                            <p>Time-Zone : <span id="time-zone"></span></p>
+                            <p>Country-Name :<span id="Country-Name"></span></p>
+                            <p>Language :<span id="Language"></span></p>
+                            <p>Org:<span id="Org"></span></p>
+                        </ul>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <script src="js/logic.js"></script>
+    <script src="js/dom.js"></script>
+</body>
+
+</html>
