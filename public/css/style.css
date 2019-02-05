@@ -1,0 +1,45 @@
+html ,body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/-Vg6Oxx/growing-network-connection-around-the-world-global-internet-concept-blue-version_eogag0-1te__F0002.png);
+    background-size: cover;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.container{
+    width:85%;
+    margin: 0 auto;
+    color: white;
+}
+.infoholder{
+    width: 85%;
+    margin-bottom: 5%;
+    margin: 10% auto;
+    background-color: rgba(0, 0, 0, 0.767);
+    min-height: 400px;
+    text-align:center;
+    border-radius: 15px;
+}
+.search{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 65%;
+    margin-top: 25px;
+}
+.result{
+    margin-top: 25px;
+    text-align: left;
+    margin: 5%;
+}
+.button{
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 7.3px;
+    width: 120px;
+    margin-left: 25px;
+    border: 0.2px solid rgb(179, 122, 122);
+    margin-top: 2%;
+}
