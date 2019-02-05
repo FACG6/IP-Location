@@ -5,6 +5,6 @@ function fetch (url,method,data,cb){
             cb(JSON.parse(xhr.responseText));
         }
     }
-    xhr.open(url,method);
+    xhr.open(method,url);
     xhr.send();
 }
