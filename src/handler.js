@@ -41,7 +41,7 @@ const staticHandler = (request, response,endpoint) => {
     })
 }
 const postHandler = (request, response) => {
-    let allData = '';
+    let allData = 'data=';
     request.on('data', chunkOfData => {
         allData += chunkOfData;
     });

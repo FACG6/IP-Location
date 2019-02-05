@@ -1,10 +1,10 @@
 const searchButton = document.querySelector('.button');
-const searchFor = document.querySelector('.search').value;
+const searchFor = document.querySelector('.search');
 searchButton.addEventListener('click',e =>{
+    console.log(searchFor.value)
     e.preventDefault();
-    fetch('/search','GET',searchFor,response => {
+    fetch('/search','POST',searchFor.value,response => {
        renderData(response);
 
     });
 })
-ren

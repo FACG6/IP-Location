@@ -6,5 +6,5 @@ function fetch (url,method,data,cb){
         }
     }
     xhr.open(method,url);
-    xhr.send();
+    xhr.send(data);
 }
