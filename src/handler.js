@@ -6,7 +6,6 @@ require('env2')('./config.env');
 
 const { key } = process.env;
 
-
 const handleHome = (request, response) => {
   const filePath = path.join(__dirname, '..', 'public', 'index.html');
   fs.readFile(filePath, (error, file) => {
