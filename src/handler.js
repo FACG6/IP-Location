@@ -2,7 +2,10 @@ const path = require('path');
 const fs = require('fs');
 const queryString = require('querystring');
 const req = require('request');
-const key = require('./.env');
+require('env2')('./config.env');
+
+const { key } = process.env;
+
 
 const handleHome = (request, response) => {
   const filePath = path.join(__dirname, '..', 'public', 'index.html');
