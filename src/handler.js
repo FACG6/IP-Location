@@ -67,8 +67,6 @@ const postHandler = (request, response) => {
                 })
 
                 response.write(body);
-                console.log(body);
-
                 response.end();
             }
 
