@@ -7,9 +7,11 @@ const fetchData = (url,method,search ,cb) => {
             if (xhr.status === 200) {
                
                 const response=JSON.parse(xhr.responseText);
-                cb(null,response);
-            }else if(xhr.status===500){                
-                cb('error',xhr.responseText);
+                if(Object.keys(response).length === 1){
+                    cb('error',null)
+                }else{
+                    cb(null,response);
+                }
             }
         }
     }
