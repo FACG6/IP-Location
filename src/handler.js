@@ -1,7 +1,10 @@
 const path = require('path');
 const fs = require('fs');
 const queryString = require('querystring');
-const handleHome = (request, response,endpoint) => {
+const req = require('request');
+const key = require('./.env');
+
+const handleHome = (request, response, endpoint) => {
     const filePath = path.join(__dirname, '..', 'public', 'index.html');
     fs.readFile(filePath, (error, file) => {
         if (error) {
@@ -16,7 +19,7 @@ const handleHome = (request, response,endpoint) => {
     })
 }
 //static service handler
-const staticHandler = (request, response,endpoint) => {
+const staticHandler = (request, response, endpoint) => {
     const contentType = {
         html: 'test/html',
         css: 'text/css',
@@ -30,7 +33,7 @@ const staticHandler = (request, response,endpoint) => {
     const extension = endpoint.split('.')[1];
     fs.readFile(filePath, (error, file) => {
         if (error) {
-            response.writeHead(404, { 'Content-Type': 'text/html' })
+            response.writeHead(404, { 'Content-Type': 'text/html' });
             response.end('<h2>Page Not Found</h2>');
         }
         else {
@@ -47,15 +50,44 @@ const postHandler = (request, response) => {
     });
     request.on('end', () => {
         const convertedData = queryString.parse(allData);
-        console.log(convertedData);
-        
-        })
-    }
 
+        const options = {
+            method: "GET",
+            url: `https://api.ipdata.co/${convertedData.data}?api-key=${key}`
+        }
+        req.get(options, (err, res, body) => {
+            if (err) {
+                response.writeHead(500, {
+                    'Content-Type': 'text/html'
+                });
+                fs.createReadStream(path.join(__dirname, '..', 'public', 'html','serverError.html')).pipe(response);
+            } else {
+                response.writeHead(200, {
+                    'Content-Type': 'application/json'
+                })
+
+                response.write(body);
+                console.log(body);
+
+                response.end();
+            }
+
+
+
+        })
+
+    })
+}
+
+const notFoundHandler = (request, response)=>{
+    response.writeHead(404, { 'Content-Type': 'text/html' });
+    fs.createReadStream(path.join(__dirname, '..', 'public', 'html','pageNotFound.html')).pipe(response);
+
+}
 
 module.exports = {
     handleHome,
     staticHandler,
     postHandler,
-
+    notFoundHandler,
 }
