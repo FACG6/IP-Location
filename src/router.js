@@ -2,6 +2,7 @@ const {
     handleHome,
     staticHandler,
     postHandler,
+    notFoundHandler
 } = require('./handler');
 
 const router = (request, response) => {
@@ -14,8 +15,7 @@ const router = (request, response) => {
         postHandler(request, response);
     }
     else {
-        response.writeHead(404, { 'Content-Type': 'text/html' });
-        response.end('<h2>Page not found!!!</h2>');
+        notFoundHandler(request,response);
     }
 }
 
