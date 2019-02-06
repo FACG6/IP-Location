@@ -9,14 +9,12 @@ searchButton.addEventListener('click',e =>{
             // renderData();
             renderData(response);
         }
-    
-
     });
 })
 
 const renderError=()=>{
     const resultNode=document.querySelector('.result');
-    resultNode.innerHTML="<p>This is not vaild IP Addres</p>";
+    resultNode.innerHTML="<p>This is not valid IP Address</p>";
     
 }
 function renderData(response){
