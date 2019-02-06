@@ -12,7 +12,7 @@ const handleHome = (request, response) => {
   fs.readFile(filePath, (error, file) => {
     if (error) {
       response.writeHead(500, { 'Content-Type': 'text/html' });
-      response.end('<h2>Server internal error !!!!!</h2>');
+      fs.createReadStream(path.join(__dirname, '..', 'public', 'html', 'serverError.html')).pipe(response);
     } else {
       response.writeHead(200, { 'Content-Type': 'text/html' });
       response.end(file);
@@ -34,7 +34,7 @@ const staticHandler = (request, response, endpoint) => {
   fs.readFile(filePath, (error, file) => {
     if (error) {
       response.writeHead(404, { 'Content-Type': 'text/html' });
-      response.end('<h2>Page Not Found</h2>');
+      fs.createReadStream(path.join(__dirname, '..', 'public', 'html', 'pageNotFound.html')).pipe(response);
     } else {
       response.writeHead(200, { 'Content-Type': contentType[extension] });
       response.end(file);
