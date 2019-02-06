@@ -5,8 +5,22 @@ html ,body{
 }
 body{
     background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/-Vg6Oxx/growing-network-connection-around-the-world-global-internet-concept-blue-version_eogag0-1te__F0002.png);
+    
     background-size: cover;
     font-family: 'Roboto Condensed', sans-serif;
+}
+h2{
+    color: white;
+    text-align: center;
+    margin-bottom: 0px;
+    font-family: 'Arvo';
+    letter-spacing: 1.5px;
+    font-size: 2em;
+    background-color: rgba(0, 0, 0, 0.767);
+    display:block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
 }
 .container{
     width:85%;
@@ -16,7 +30,7 @@ body{
 .infoholder{
     width: 85%;
     margin-bottom: 5%;
-    margin: 10% auto;
+    margin: 5% auto;
     background-color: rgba(0, 0, 0, 0.767);
     min-height: 400px;
     text-align:center;
@@ -33,6 +47,7 @@ body{
     text-align: left;
     margin: 5%;
     align-content: center;
+    margin-left: 10%;
 }
 .button{
     background-color: white;
