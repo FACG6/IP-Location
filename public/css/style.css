@@ -43,3 +43,25 @@ body{
     border: 0.2px solid rgb(179, 122, 122);
     margin-top: 2%;
 }
+.result div:nth-child(odd){
+    color:blue;
+    float: left;
+    width: 10%;
+    display: block;
+}
+
+.result  div:nth-child(even){
+ color: gold;
+ width: 75%;
+ margin-left: 10%;
+ display:block;
+}
+
+.result div:nth-child(even):after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 15px;
+}
