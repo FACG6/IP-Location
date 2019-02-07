@@ -17,13 +17,13 @@ const renderError=()=>{
     resultNode.innerHTML="<p>This is not valid IP Address</p>";
     
 }
-function renderData(response){
+const renderData=(response)=>{
     result = document.querySelector('.result');
     result.innerHTML = '';
     showInfo(response);
 }
 
-function showInfo(obj){
+const showInfo=(obj)=>{
 
     let info = {
        "ip":"IP: ",
@@ -39,7 +39,7 @@ function showInfo(obj){
     }
     
 }
-function appendcreate(x){
+const appendcreate=(x)=>{
     let holder= document.createElement('div');
     let content = document.createTextNode(x);
       holder.appendChild(content);
