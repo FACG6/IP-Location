@@ -1,4 +1,3 @@
-
 const fetchData = (url, method, search, cb) => {
   const xhr = new XMLHttpRequest();
 
