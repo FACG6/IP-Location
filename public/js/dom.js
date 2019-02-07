@@ -6,9 +6,9 @@ searchButton.addEventListener('click',e =>{
         if(error){
             renderError();
         }else{
-            // renderData();
             renderData(response);
         }
+        searchFor.value='';
     });
 })
 
